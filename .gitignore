@@ -1,1 +1,2 @@
-./TensorFlow/models/*
+TensorFlow/models/*
+!TensorFlow/models/readme.txt
