@@ -1,0 +1,1 @@
+Images ready for detection by trained model
