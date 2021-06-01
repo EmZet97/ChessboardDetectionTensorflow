@@ -1,1 +1,1 @@
-Models dir
+Models dir. To this place will be copied trained models
