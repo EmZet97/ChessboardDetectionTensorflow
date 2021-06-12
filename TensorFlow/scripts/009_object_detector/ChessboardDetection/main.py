@@ -1,7 +1,4 @@
-import numpy as np
 import cv2 as cv
-from matplotlib import pyplot as plt
-import random
 
 import Helpers.ImageDetection as detector
 
@@ -10,7 +7,6 @@ import Helpers.ResourceLoader as resources
 
 
 for image in resources.load_camera_frame(2):
-    # Read trackbars values
     det_image = detector.label_image(image)
 
     # Display the resulting frame windows
@@ -21,5 +17,4 @@ for image in resources.load_camera_frame(2):
         break
 
 # When everything done, release the capture
-#cap.release()
 cv.destroyAllWindows()

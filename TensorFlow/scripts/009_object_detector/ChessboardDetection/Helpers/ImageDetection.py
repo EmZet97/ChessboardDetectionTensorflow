@@ -75,13 +75,12 @@ def run_inference_for_single_image(model, image):
   return output_dict
 
 
-
-
 labelmap_path = "../../../workspace/detection_training/annotations/label_map.pbtxt"
 output_directory = "../../../workspace/detection_training/exported-models/saved_model"
 category_index = label_map_util.create_category_index_from_labelmap(labelmap_path, use_display_name=True)
 tf.keras.backend.clear_session()
 model = tf.saved_model.load(f'{output_directory}')
+
 
 def label_image(image):
     output_dict = run_inference_for_single_image(model, image)
@@ -94,7 +93,5 @@ def label_image(image):
         instance_masks=output_dict.get('detection_masks_reframed', None),
         use_normalized_coordinates=True,
         line_thickness=8)
-
-    #img = Image.fromarray(image)
 
     return image
